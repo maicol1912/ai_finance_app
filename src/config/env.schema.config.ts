@@ -12,7 +12,7 @@ export interface EnvSchemaType{
     HUGGINGFACE_API_KEY:string;
 }
 
-export const EnvSchemaJoi = Joi.object({
+export const EnvSchemaJoi = Joi.object<EnvSchemaType>({
     SERVER_PORT: Joi.number().required(),
     DATABASE_HOST: Joi.string().required(),
     DATABASE_USER: Joi.string().required(),

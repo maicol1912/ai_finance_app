@@ -1,0 +1,77 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "paths": {
+            // Paths base
+            "@app/*": ["src/*"],
+            "@modules/*": ["src/modules/*"],
+            "@shared/*": ["src/shared/*"],
+            "@config/*": ["src/config/*"],
+            
+            // Paths para cada módulo
+            "@expense/*": ["src/modules/expense/*"],
+            "@investment/*": ["src/modules/investment/*"],
+            "@market/*": ["src/modules/market/*"],
+            "@user/*": ["src/modules/user/*"],
+            "@ai/*": ["src/modules/ai/*"],
+      
+            // Expense module paths
+            "@expense/domain/*": ["src/modules/expense/domain/*"],
+            "@expense/application/*": ["src/modules/expense/application/*"],
+            "@expense/infrastructure/*": ["src/modules/expense/infrastructure/*"],
+            "@expense/api/*": ["src/modules/expense/api/*"],
+      
+            // Investment module paths
+            "@investment/domain/*": ["src/modules/investment/domain/*"],
+            "@investment/application/*": ["src/modules/investment/application/*"],
+            "@investment/infrastructure/*": ["src/modules/investment/infrastructure/*"],
+            "@investment/api/*": ["src/modules/investment/api/*"],
+      
+            // Market module paths
+            "@market/domain/*": ["src/modules/market/domain/*"],
+            "@market/application/*": ["src/modules/market/application/*"],
+            "@market/infrastructure/*": ["src/modules/market/infrastructure/*"],
+            "@market/api/*": ["src/modules/market/api/*"],
+      
+            // User module paths
+            "@user/domain/*": ["src/modules/user/domain/*"],
+            "@user/application/*": ["src/modules/user/application/*"],
+            "@user/infrastructure/*": ["src/modules/user/infrastructure/*"],
+            "@user/api/*": ["src/modules/user/api/*"],
+      
+            // AI module paths
+            "@ai/domain/*": ["src/modules/ai/domain/*"],
+            "@ai/application/*": ["src/modules/ai/application/*"],
+            "@ai/infrastructure/*": ["src/modules/ai/infrastructure/*"],
+            "@ai/api/*": ["src/modules/ai/api/*"],
+
+            // Paths para elementos comunes del dominio
+            "@domain/interfaces": [
+                "src/modules/expense/domain/interfaces/index.ts",
+                "src/modules/investment/domain/interfaces/index.ts",
+                "src/modules/market/domain/interfaces/index.ts",
+                "src/modules/user/domain/interfaces/index.ts",
+                "src/modules/ai/domain/interfaces/index.ts"
+            ],
+            "@domain/entities": [
+                "src/modules/expense/domain/entities/index.ts",
+                "src/modules/investment/domain/entities/index.ts",
+                "src/modules/market/domain/entities/index.ts",
+                "src/modules/user/domain/entities/index.ts",
+                "src/modules/ai/domain/entities/index.ts"
+            ],
+            "@domain/value-objects": [
+                "src/modules/expense/domain/value-objects/index.ts",
+                "src/modules/investment/domain/value-objects/index.ts",
+                "src/modules/market/domain/value-objects/index.ts",
+                "src/modules/user/domain/value-objects/index.ts",
+                "src/modules/ai/domain/value-objects/index.ts"
+           ],
+
+           // Paths para capas compartidas
+           "@shared/infrastructure/*": ["src/shared/infrastructure/*"],
+           "@shared/interfaces/*": ["src/shared/interfaces/*"],
+           "@shared/utils/*": ["src/shared/utils/*"]
+        }
+    }
+}
