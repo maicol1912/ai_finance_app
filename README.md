@@ -90,6 +90,8 @@ src/
 │   │   └── [misma estructura que expense]
 │   │
 │   └── market/              # Módulo de mercados
+│   |    └── [misma estructura que expense]
+|    └── market/              # Módulo de mercados
 │       └── [misma estructura que expense]
 │
 ├── shared/                   # Código compartido entre módulos

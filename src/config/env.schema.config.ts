@@ -10,6 +10,8 @@ export interface EnvSchemaType{
     DATABASE_USER:string;
     DATABASE_PASSWORD:string;
     HUGGINGFACE_API_KEY:string;
+    DATABASE_PORT:number;
+    DATABASE_NAME:string;
 }
 
 export const EnvSchemaJoi = Joi.object<EnvSchemaType>({
@@ -17,7 +19,9 @@ export const EnvSchemaJoi = Joi.object<EnvSchemaType>({
     DATABASE_HOST: Joi.string().required(),
     DATABASE_USER: Joi.string().required(),
     DATABASE_PASSWORD: Joi.string().required(),
-    HUGGINGFACE_API_KEY:Joi.string().required()
+    HUGGINGFACE_API_KEY:Joi.string().required(),
+    DATABASE_PORT: Joi.number().required(),
+    DATABASE_NAME: Joi.string().required()
 }).unknown();
 
 const { error, value } = EnvSchemaJoi.validate(process.env, { abortEarly: false })
