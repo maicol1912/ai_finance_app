@@ -9,6 +9,10 @@ import cors from 'cors';
 import mongoSanitize from 'express-mongo-sanitize';
 import compression from 'compression';
 import fs from "fs"
+import moment from 'moment-timezone';
+
+
+moment.tz.setDefault('America/Bogota');
 
 const isProduction = () => {
   return process.env.NODE_ENV === 'production';
@@ -59,6 +63,7 @@ export const nestApplication = async <T>(
     max: 30,
   });
 
+  app.setGlobalPrefix(EnvConfig.API_PREFIX)
   app.use(helmet());
   app.use(cors());
   app.use(mongoSanitize());
@@ -79,6 +84,7 @@ export const nestApplication = async <T>(
   await app.listen(EnvConfig.SERVER_PORT, ()=>{
     console.log(`🌟 Server mod ${process.env.NODE_ENV} is running PORT: ${EnvConfig.SERVER_PORT} 🌟`)
   });
+  console.log(moment(new Date()).format('DD MMMM YYYY hh:mm:ss A'))
   return app;
 };
 

@@ -45,30 +45,13 @@ export class BuilderPrototype<T extends object> {
      * const user = new BuilderPrototype(UserDomainEntity)
      *     .assign({ name: 'John Doe', age: 30 })
      *     .build();
+     * 
+     * const user = new BuilderPrototype(UserDomainEntity)
+     *     .assign({ ...value })
+     *     .build();
      */
     assign(values: Partial<T>): this {
         Object.assign(this.instance, values);
-        return this;
-    }
-
-    /**
-     * Asigna solo las propiedades que coinciden con las del objeto en construcción.
-     * Útil cuando se quiere evitar asignar propiedades no deseadas.
-     *
-     * @param values - Un objeto parcial con las propiedades a asignar.
-     * @returns La instancia actual del builder para permitir el encadenamiento.
-     *
-     * @example
-     * const user = new BuilderPrototype(UserDomainEntity)
-     *     .assignMatching({ name: 'John Doe', age: 30, unknownProp: 'value' }) // 'unknownProp' no se asignará
-     *     .build();
-     */
-    assignMatching(values: Partial<T>): this {
-        Object.keys(values).forEach((key) => {
-            if (key in this.instance) {
-                this.instance[key as keyof T] = values[key as keyof T]!;
-            }
-        });
         return this;
     }
 

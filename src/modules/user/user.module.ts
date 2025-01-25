@@ -8,6 +8,7 @@ import { UserUseCase } from './domain/interfaces/services/user.use-case';
 import { UserService } from './application/services/user.service';
 import { CqrsModule } from '@nestjs/cqrs';
 import { CreateUserHandler } from './application/commands/implementations/create-user.handler';
+import { GetUserHandler } from './application/queries/implementations/get-user.handler';
 
 @Module({
     imports:[
@@ -20,6 +21,7 @@ import { CreateUserHandler } from './application/commands/implementations/create
         UserController
     ],
     providers:[
+        GetUserHandler,
         CreateUserHandler,
         {
             provide: UserRepositoryInterface,
